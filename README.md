@@ -90,7 +90,7 @@ DoRothEA is a comprehensive resource containing a curated collection of TFs and 
 
 We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb]()) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The most interesting transcription factors are shown on the dot plot. 
  
- 
+ ![dotplot_scRNAseq](dotplot_scRNAseq.PNG)
 We also built UMAP plots to visualize the expression of transcription factors of interest in order to highlight their expression level in certain cell types. The UMAP plot for MAFB which is overexpressed in monocytes and monocyte-like cells is shown below as an example.
 
 
