@@ -78,10 +78,25 @@ The obtained PROGENy scores for each AML patient and HDs were performed at the h
 Then we ran the enrichment analysis to assess the significance of the pathway activity scores and performed the results at the histogram (Progeny NES график). The most activated (PI3K) and deactivated (Trail) pathways correspond with the literature data about pathway activity alteration during AML. PI3K, or, the phosphatidylinositol-3-kinase pathway, is described as important in normal and malignant hematopoiesis, involved in cell proliferation, differentiation and survival ([Salihanur Darici et al., 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7563273/)). PI3K pathway is often detected as constitutively activated in AML cells, with FLT3 mutations as one of the driving mechanisms. This matches our dataset genetic landscape (38% of patients carry FLT3 mutations). 
 
 #### Transiption factors activity analysis with DoRothEA 
-To determine the most activated and deactivated transcription factors in AML (compared to healthy controls), we used DoRothEA ([Garcia-Alonso et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31340985/)). DoRothEA was installed as a Bioconductor package. We ran DoRothEA and obtained  We received the top 25 most activated and deactivated TFs, which NES are displayed in a bar plot below.
-
+To determine the most activated and deactivated TFs in AML (compared to healthy controls), we used DoRothEA ([Garcia-Alonso et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31340985/)). DoRothEA was installed as a Bioconductor package. We ran DoRothEA and received 249  TFs which activity significantly differed in AML patients and HDs. The NES of the top 75 most activated and deactivated TFs are displayed in a bar plot below.
+![dorothea_NES_pseudobulk](dorothea_NES_pseudobulk.png)
 
 DoRothEA is a comprehensive resource containing a curated collection of TFs and their transcriptional targets. The set of genes regulated by a specific TF is known as regulon. The volcano plot below displays the expression of regulon genes of NCOA1, one of the most deregulated TFs according to the results.
+
+![volcano_dorothea](volcano_dorothea.png)
+
+ 
+#### TFs visualization on scRNA-seq data
+
+We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb]()) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The most interesting transcription factors are shown on the dot plot. 
+ 
+ 
+We also built UMAP plots to visualize the expression of transcription factors of interest in order to highlight their expression level in certain cell types. The UMAP plot for MAFB which is overexpressed in monocytes and monocyte-like cells is shown below as an example.
+
+
+#### Searching for possible prognostic markers
+
+We began our literary research by studying publications that discuss the relationship between AML and TFs that we found using DoRothEA package. Of course, not for each of the transcription factors there were references in the literature about its association with AML.
 
 ## Literature
 
