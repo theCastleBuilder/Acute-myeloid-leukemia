@@ -96,7 +96,10 @@ We also built UMAP plots to visualize the expression of transcription factors of
 
 #### Searching for possible prognostic markers
 
-We began our literary research by studying publications that discuss the relationship between AML and TFs that we found using DoRothEA package. Of course, not for each of the transcription factors there were references in the literature about its association with AML.
+We began our literary research by studying publications that discuss the relationship between AML and TFs that we found using DoRothEA package. 
+
+
+Of course, not for each of the TFs there were references in the literature about its association with AML. Therefore, there is a large space for studying the involvement of not previously mentioned in AML context TFs in gene regulatory networks and signaling pathways in order to build hypotheses.  
 
 ## Literature
 
