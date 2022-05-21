@@ -12,7 +12,7 @@ Acute myeloid leukemia (AML) is a heterogeneous group of oncohematological neopl
 One of the possible reasons for the malignant transformation of hematopoietic cells are mutations, translocations, or aberrant activity of transcriptional factors ([Khan, I. et al., 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9052200/)). Therefore, a better understanding of the mechanisms of transcriptional regulation can help develop new therapeutic strategies and identify prognostic markers.
 
 
-## Aim, tasks and data
+## Aim, objectives and data
 
 The aim of the project was to investigate signalling pathways activity alteration and TFs expression in the AML patients cells while performing RNAseq analysis.
 The following objectives were set in order to achieve the goal:Thus, a better understanding of the mechanisms of transcriptional regulation can help develop new therapeutic strategies and identify prognostic markers.
@@ -43,8 +43,14 @@ All the tutorials for bulk and pseudo-bulk RNA-seq data analysis were taken from
 
 ### Bulk RNA-seq data
 
+At the first stage of the work, we downloaded the RNA sequencing data (GSE138702), preprocessed the data according to the tutorials, and analyzed the activity of signaling pathways using the PROGENy method (Detailed description of these steps will be below). However, we found a discrepancy with the literature data and subsequently found that there were not enough genes in this dataset for correct further processing (for calculating pathway activity scores).
 
-### Preprocessing of the raw counts data
+Moreover, the S7 AML sample showed extreme scores and could change the whole picture of pathways activity estimation, the heatmap illustrating this is given below. Therefore, we decided to change the dataset.
+
+![workflow](progeny_results_bulkRNA.png)
+
+### Pseudo-bulk RNA-seq data
+#### Preprocessing of the raw counts data
 
 We downloaded open source bone marrow scRNA-seq data of AML patients and HDs. Untreated AML patients only were taken into the sample. Thus, the work was carried out with 16 specimens of AML patients and with 25 specimens of HDs.
 
