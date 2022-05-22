@@ -92,9 +92,10 @@ DoRothEA is a comprehensive resource containing a curated collection of TFs and 
  
 #### TFs visualization on scRNA-seq data
 
-We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb](scRNAseq_AML.ipynb)) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The most interesting transcription factors are shown on the dot plot. 
+We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb](scRNAseq_AML.ipynb)) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The TFs having the most interesting pattern of expression between cell types are shown on the dotplot. 
 
  ![dotplot_scRNAseq](dotplot_scRNAseq.PNG)
+ 
 We also built UMAP plots to visualize the expression of transcription factors of interest in order to highlight their expression level in certain cell types. The UMAP plot for MAFB which is overexpressed in monocytes and monocyte-like cells is shown below as an example.
 
 ![MAFB_featureplot](MAFB_featureplot.png)
@@ -113,7 +114,7 @@ Among the top 100 differentially activated TFs we also selected AHR  - ligand-ac
 
 NR4A1 activation can explain the downregulation of MYC and NFkB pathway activities which we observed after PROGENy and DoRothEA run ([Salix Boulet et al., 2022](https://www.sciencedirect.com/science/article/pii/S2590255522000014?via%3Dihub)). 
 
-One of the most activated TF in our research (top 25 by DoRothEA) was MEIS1, a transcriptional regulator  parciticated in hematopoiesis, megakaryocyte lineage development and also can act as cofactor of HOX genes especially in the induction of myeloid leukemias. Both MEIS1 and HOXA9 were activated in our AML samples which conforms to most literature sources about their co-overexpression, associated with poor prognosis ([Cailin T. Collins and Jay L. Hess, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5653247/)). 
+One of the most activated TF in our research (top 25 by DoRothEA) was MEIS1, a transcriptional regulator  parciticated in hematopoiesis, megakaryocyte lineage development that also can act as cofactor of HOX genes especially in the induction of myeloid leukemias. Both MEIS1 and HOXA9 were activated in our AML samples which conforms to most literature sources about their co-overexpression, associated with poor prognosis ([Cailin T. Collins and Jay L. Hess, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5653247/)). 
 
 It is worth noting that we did not find any controversial data about MEIS activation during AML. That’s why we chose MEIS1 for subsequent Kaplan-Meier survival analysis ([Kaplan_Meier_Analysis](Kaplan_Meier_Analysis.ipynb)). For doing this we took an AML dataset with overall survival (OS) data. Patients with NA values were excluded, and finally 123 patients were taken into analysis. Then the patients were divided in two groups depending on the level of MEIS1 expression (the median value was chosen as the threshold). 
 
@@ -122,7 +123,7 @@ It is worth noting that we did not find any controversial data about MEIS activa
   <img src="MEIS1_Kaplan_Meier.png" />
 </p>
 
-The Kaplan-Meier curves show the difference in survival between two groups with decreased survival for the group expressing MEIS1 above median (p-value = 0.005). Thus, MEIS1 can be considered as a possible prognostic marker at the significance level of $\alpha$ = 0.01. However this result should be validated on the bigger AML patients cohort. 
+The Kaplan-Meier curves show the difference in survival between two groups with decreased survival for the group expressing MEIS1 above median (p-value = 0.005). Thus, MEIS1 can be considered as a possible prognostic marker at the significance level of $\alpha$ = 0.01. However, this result should be validated on the bigger AML patients cohort. 
 
 Of course, not for each of the TFs there were references in the literature about its association with AML. Therefore, there is a large space for studying the involvement of not previously mentioned in AML context TFs in gene regulatory networks and signaling pathways in order to build hypotheses.  
 
