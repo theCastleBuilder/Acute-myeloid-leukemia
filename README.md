@@ -101,7 +101,7 @@ We also built UMAP plots to visualize the expression of transcription factors of
 
 #### Searching for possible prognostic markers
 
-We began our literary research with studying publications that discuss the relationship between AML and TFs that we found using DoRothEA package. 
+We began our literature research with studying publications that discuss the relationship between AML and TFs that we found using DoRothEA package. 
 
 For the most activated TF, NCOA1 (nuclear receptor coactivator 1), along with other active NCOA3 and NCOA2, encoded by paralogous genes, no literature evidence about the expression during AML were found. Some authors describe the rearrangements involving these genes resulting in generating the functionally aberrant fusion proteins ([S Esteyries et al., 2009](https://www.nature.com/articles/2404930)). Also for NCOA1 TF the direct interaction with ASXL1 protein encoded by one of the most frequently mutated genes  in malignant myeloid diseases was described ([M Katoh, 2013](https://www.nature.com/articles/bjc2013281)).  
 
