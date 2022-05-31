@@ -34,7 +34,7 @@ Also AML dataset with overall survival data was used to perform Kaplan-Meier ana
 ## Workflow
 The workflow of the project is presented at the following scheme. 
 
-![workflow](workflow.png)
+![workflow](/Figures/workflow.png)
 
  \*  Checking the accordance of the obtained pathways activities in AML patients compared to HDs with the literature.
 
@@ -45,37 +45,37 @@ All the tutorials for bulk and pseudo-bulk RNA-seq data analysis were taken from
 
 At the first stage of the work, we downloaded the RNA sequencing data (GSE138702), preprocessed the data according to the tutorials, and analyzed the activity of signaling pathways using the PROGENy method (detailed description of these steps will be provided below). However, we found a discrepancy with the literature data and subsequently found that there were not enough genes in this dataset for correct further processing (for calculating pathway activity scores). Moreover, the S7 AML sample showed extreme scores and could change the whole picture of pathways activity estimation, the heatmap illustrating this is given below. Therefore, we decided to change the dataset.
 
-![progeny_bulk](progeny_results_bulkRNA.png)
+![progeny_bulk](/Figures/progeny_results_bulkRNA.png)
 
 ### Pseudo-bulk RNA-seq data
 #### Preprocessing of the raw counts data
 
 We downloaded open source bone marrow scRNA-seq data of AML patients and HDs. Untreated AML patients only were taken into the sample. Thus, the work was carried out with 16 AML patients and with 25 HDs. Firstly, scRNAseq data was transformed to pseudo-bulk. Then log2-transformed pseudo-bulk RNAseq counts were visualized using violin plots to choose the threshold for low expressed genes cutoff. We chose the threshold for log2-transformed gene expressions at level 1.5.
 
-![violin_plots_pseudobulk](violin_plots_pseudobulkRNA.png)
+![violin_plots_pseudobulk](/Figures/violin_plots_pseudobulkRNA.png)
 
 Genes with expression lower than the threshold in less than a half of patients from each group were removed. After low expressed genes removal, 9897 genes remained.
  
 Then  pseudo-bulk RNAseq counts were normalized with the VSN package, in which the variance stabilization and calibration method of normalization was implemented ([Huber et al., 2002](https://pubmed.ncbi.nlm.nih.gov/12169536/)).
 Then principal components analysis (PCA) was carried out, and then visualized. Plot below shows that AML patients and HDs are well separated.
 
-![PCA_pseudobulk](PCA_pseudobulk.png)
+![PCA_pseudobulk](/Figures/PCA_pseudobulk.png)
 
 #### Differential expression analysis
 
 Then we performed differential expression analysis (DEA) on normalized data using the limma R package ([Matthew E. Ritchie et al., 2015](https://www.researchgate.net/publication/271332965_LIMMA_powers_differential_expression_analyses_for_RNA-sequencing_and_microarray_studies/link/5639b7c808aecf1d92a9cbed/download)). We received a table of genes sorted by p-value, which contains DEA main statistics such as logFC, adjusted p-value (Table 1). We also plotted qqplot (observed p-value distribution plotted against a random baseline). The black line deviates from the diagonal strongly enough, which means that the data of healthy and AML samples differ quite a lot. 
 
-![limma_pseudobulk](limma_pseudobulk.png)
+![limma_pseudobulk](/Figures/limma_pseudobulk.png)
 
 #### Pathways activity analysis with PROGENy
 
 For estimating the pathway activity we run PROGENy (Pathway RespOnsive GENes), a program which allows to infer the pathway activity indirectly, based on consensus gene signatures ([Schubert et al., 2018](https://www.nature.com/articles/s41467-017-02391-6); [Holland et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31525460/); [Holland et al., 2020](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1949-z)). PROGENy was installed as a Bioconductor package. At the first step we downloaded normalized counts and DEA table results obtained in the previous steps to compute PROGENy scores for each sample. The 200 most responsible genes per pathway were chosen for the program running. However, not all of these genes were found in the dataset (Table 2). This can explain the following possible misaccordance of the results with the literature data. Then we ran the enrichment analysis to assess the significance of the pathway activity scores and performed the results (Normalized enrichment scores, NES) in the bar plot below. 
 
-![progeny_NES_pseudobulkRNA](progeny_NES_pseudobulkRNA.png)
+![progeny_NES_pseudobulkRNA](/Figures/progeny_NES_pseudobulkRNA.png)
 
 The obtained PROGENy scores for each AML patient and HDs were performed at the heatmap, which illustrated a good separation of pathway activities between two groups.
 
-![progeny_heatmap_pseudobulkRNA](progeny_heatmap_pseudobulkRNA.png)
+![progeny_heatmap_pseudobulkRNA](/Figures/progeny_heatmap_pseudobulkRNA.png)
 
 The most activated (PI3K) and deactivated (Trail) pathways correspond with the literature data about pathway activity alteration during AML. PI3K, or, the phosphatidylinositol-3-kinase pathway, is described as important in normal and malignant hematopoiesis, involved in cell proliferation, differentiation and survival ([Salihanur Darici et al., 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7563273/)). PI3K pathway is often detected as constitutively activated in AML cells, with FLT3 mutations as one of the driving mechanisms. This matches our dataset genetic landscape (38% of patients carry FLT3 mutations). 
 
@@ -83,22 +83,22 @@ The most activated (PI3K) and deactivated (Trail) pathways correspond with the l
 
 To determine the most activated and deactivated TFs in AML (compared to healthy controls), we used DoRothEA ([Garcia-Alonso et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31340985/)). DoRothEA was installed as a Bioconductor package. We ran DoRothEA and received 249 TFs which activity significantly differed in AML patients compared with HDs. The NES of the top 75 most activated and deactivated TFs are displayed in a bar plot below.
 
-![dorothea_NES_pseudobulk](dorothea_NES_pseudobulk.png)
+![dorothea_NES_pseudobulk](/Figures/dorothea_NES_pseudobulk.png)
 
 DoRothEA is a comprehensive resource containing a curated collection of TFs and their transcriptional targets. The set of genes regulated by a specific TF is known as regulon. Volcano plots for regulon genes of  two the most differentially activated TFs (FOXP1 and NCOA1) are provided below.
 
-![volcano_dorothea](volcano_dorothea.png)
+![volcano_dorothea](/Figures/volcano_dorothea.png)
 
  
 #### TFs visualization on scRNA-seq data
 
 We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb](scRNAseq_AML.ipynb)) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The TFs having the most interesting pattern of expression between cell types are shown on the dotplot. 
 
- ![dotplot_scRNAseq](dotplot_scRNAseq.PNG)
+ ![dotplot_scRNAseq](/Figures/dotplot_scRNAseq.PNG)
  
 We also built UMAP plots to visualize the expression of transcription factors of interest in order to highlight their expression level in certain cell types. The UMAP plot for MAFB which is overexpressed in monocytes and monocyte-like cells is shown below as an example.
 
-![MAFB_featureplot](MAFB_featureplot.png)
+![MAFB_featureplot](/Figures/MAFB_featureplot.png)
 
 #### Searching for possible prognostic markers
 
@@ -120,7 +120,7 @@ It is worth noting that we did not find any controversial data about MEIS activa
 
 
 <p align="center">
-  <img src="MEIS1_Kaplan_Meier.png" />
+  <img src="/Figures/MEIS1_Kaplan_Meier.png" />
 </p>
 
 The Kaplan-Meier curves show the difference in survival between two groups with decreased survival for the group expressing MEIS1 above median (p-value = 0.005). Thus, MEIS1 can be considered as a possible prognostic marker at the significance level of $\alpha$ = 0.01. However, this result should be validated on the bigger AML patients cohort. 
