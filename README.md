@@ -31,6 +31,9 @@ Publicly available datasets from Gene Expression Omnibus (GEO) were used:
 
 Also AML dataset with overall survival data was used to perform Kaplan-Meier analysis of survival([dbGaP phs001657.v1.p1](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001657.v1.p1&phv=417530&phd=&pha=&pht=9391&phvf=&phdf=&phaf=&phtf=&dssp=1&consent=&temp=1)).
 
+## Justification of the tools choice
+At first we were planning to work with bulk RNA datasets performing the pathway  and TFs activity alteration in the cells of AML patients bone marrow compared with healthy donors and validate the findings on the scRNA data. For the research we chose the tools developed in the Saez lab for the pathway and TF activity investigation: PROGENy and DoRothEA, available as R packages ([Garcia-Alonso L et al, 2019](https://genome.cshlp.org/content/29/8/1363.full), [Schubert, M. et al, 2018](https://www.nature.com/articles/s41467-017-02391-6#MOESM1)). The authors describe the advantages of PROGENy as the ability to infer the transcriptomic consequences of the processes not by direct mapping of the expression levels of involved genes but by the ‘footprints’ -  consistently deregulated genes with the known impact (‘weight’) on the pathway, which also allows to take into account the post-translational protein modifications. In the case of DoRothEA development several resources of TFs activity estimation were compared and integrated regulons for each TF were derived. The authors proved these tools outperformed the existing methods being more accurate and informative. 
+
 ## Workflow
 The workflow of the project is presented at the following scheme. 
 
