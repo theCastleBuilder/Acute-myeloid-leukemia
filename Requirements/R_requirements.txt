@@ -1,0 +1,41 @@
+R version 4.1.1 (2021-08-10)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19044)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=Russian_Russia.1251  LC_CTYPE=Russian_Russia.1251   
+[3] LC_MONETARY=Russian_Russia.1251 LC_NUMERIC=C                   
+[5] LC_TIME=Russian_Russia.1251    
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] dorothea_1.6.0      progeny_1.16.0      tidyr_1.2.0         tibble_3.1.6       
+ [5] limma_3.50.1        dplyr_1.0.8         hexbin_1.28.2       ggrepel_0.9.1      
+ [9] cowplot_1.1.1       gridExtra_2.3       pheatmap_1.0.12     reshape_0.8.8      
+[13] ggplot2_3.3.5       vsn_3.62.0          Biobase_2.54.0      BiocGenerics_0.40.0
+[17] readr_2.1.2        
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.8            lattice_0.20-45       viper_1.28.0         
+ [4] class_7.3-20          assertthat_0.2.1      digest_0.6.28        
+ [7] utf8_1.2.2            R6_2.5.1              plyr_1.8.6           
+[10] e1071_1.7-9           pillar_1.7.0          zlibbioc_1.40.0      
+[13] rlang_1.0.1           rstudioapi_0.13       kernlab_0.9-29       
+[16] Matrix_1.4-0          preprocessCore_1.56.0 splines_4.1.1        
+[19] labeling_0.4.2        bcellViper_1.30.0     mixtools_1.2.0       
+[22] bit_4.0.4             munsell_0.5.0         proxy_0.4-26         
+[25] compiler_4.1.1        pkgconfig_2.0.3       segmented_1.4-0      
+[28] tidyselect_1.1.1      fansi_1.0.2           crayon_1.5.0         
+[31] tzdb_0.2.0            withr_2.4.3           MASS_7.3-55          
+[34] gtable_0.3.0          lifecycle_1.0.1       affy_1.72.0          
+[37] DBI_1.1.2             magrittr_2.0.2        scales_1.1.1         
+[40] KernSmooth_2.23-20    cli_3.1.1             vroom_1.5.7          
+[43] farver_2.1.0          affyio_1.64.0         ellipsis_0.3.2       
+[46] generics_0.1.2        vctrs_0.3.8           RColorBrewer_1.1-2   
+[49] tools_4.1.1           bit64_4.0.5           glue_1.6.1           
+[52] purrr_0.3.4           hms_1.1.1             survival_3.2-13      
+[55] parallel_4.1.1        colorspace_2.0-2      BiocManager_1.30.16  
