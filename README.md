@@ -92,7 +92,7 @@ DoRothEA is a comprehensive resource containing a curated collection of TFs and 
  
 #### TFs visualization on scRNA-seq data
 
-We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb](scRNAseq_AML.ipynb)) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The TFs having the most interesting pattern of expression between cell types are shown on the dotplot. 
+We preprocessed the single cell data (detailed steps are described in the notebook [scRNAseq_AML.ipynb](/Scripts/scRNAseq_AML.ipynb)) and using the author's markup by cell types looked at the expression of transcription factors in different bone marrow cell types ([van Galen et al., 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6515904/)). The TFs having the most interesting pattern of expression between cell types are shown on the dotplot. 
 
  ![dotplot_scRNAseq](/Figures/dotplot_scRNAseq.PNG)
  
